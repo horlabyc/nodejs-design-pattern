@@ -25,9 +25,7 @@ function emitRecursion(number, emitter, count, cb) {
   }, 50);
 }
 
-tickerFn(1000, (err, count) => {
-  if (err) {
-    console.log(`Error occured :: ${err}`)
-  }
+tickerFn(500, (err, count) => {
   console.log(`Program emitted ${count} ${count > 1 ? "ticks" : "tick"}.`)
-}).on('ticks', () => console.log("Tick emitted"))
+})
+  .on('ticks', () => console.log("Tick emitted"))
